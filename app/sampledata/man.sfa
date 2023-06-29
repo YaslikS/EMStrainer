@@ -1,0 +1,240 @@
+{
+  animations: [
+    {
+      clips: [
+        {
+          name: 'squats',
+        },
+        {
+          name: 'armTwisting',
+        },
+        {
+          name: 'swingHands',
+        },
+        {
+          name: 'headTilts',
+        },
+        {
+          name: 'pressingKneesChest',
+        },
+        {
+          name: 'pelvicTorsion',
+        },
+        {
+          name: 'lyingBikeFeet',
+        },
+        {
+          name: 'mountaineer',
+        },
+        {
+          name: 'runningSpot',
+        },
+        {
+          name: 'pressLyingDown',
+        },
+        {
+          name: 'cornerHandsForward',
+        },
+        {
+          name: 'Lunges',
+        },
+        {
+          name: 'lateralSlopesFeet',
+        },
+        {
+          name: 'mill',
+        },
+        {
+          name: 'rotationArmsElbows',
+        },
+        {
+          name: 'sidewaysStepsPlank',
+        },
+        {
+          name: 'bendsBandsBehindHead',
+        },
+        {
+          name: 'pushupsEmphasisKnees',
+        },
+        {
+          name: 'stretchingQuadricepsMuscle',
+        },
+        {
+          name: 'embryo',
+        },
+        {
+          name: 'twistingLowerBackLyingSide',
+        },
+        {
+          name: 'squatStance',
+        },
+        {
+          name: 'standShoulderBlades',
+        },
+        {
+          name: 'removingHipLunge',
+        },
+        {
+          name: 'gluteBridgeOneLeg',
+        },
+        {
+          name: 'cornerHandsSides',
+        },
+        {
+          name: 'stretchingBodyHorizontalPlaneInclinatio',
+        },
+        {
+          name: 'tree',
+        },
+        {
+          name: 'liftingArmsLegsFours',
+        },
+        {
+          name: 'squatsOneLeg',
+        },
+        {
+          name: 'snakePose',
+        },
+        {
+          name: 'sidePlank',
+        },
+        {
+          name: 'plankAlternatingLiftingArms',
+        },
+        {
+          name: 'pushupsSlapShoulder',
+        },
+        {
+          name: 'squatsAgainstWall',
+        },
+        {
+          name: 'bendingBodyBackSittingKnees',
+        },
+        {
+          name: 'liftsLegSecondStopSupinePosition',
+        },
+        {
+          name: 'liftinglegsBodySupinePositionSide',
+        },
+        {
+          name: 'kick',
+        },
+        {
+          name: 'jumpingSideways',
+        },
+        {
+          name: 'weightTransferOneKneeAnother',
+        },
+        {
+          name: 'stepsHandsRecliningPosition',
+        },
+      ],
+      path: 'sampledata/man.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '03 - Default',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Man_clothes_diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'man',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Man_diffuse',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'Color',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/man.fbx',
+    name: 'man',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/man.fbm/Man_diffuse.png',
+      name: 'Man_diffuse',
+      pipeline_name: 'man.fbm/Man_diffuse.png',
+    },
+    {
+      file: 'sampledata/man.fbm/Man_clothes_diffuse.png',
+      name: 'Man_clothes_diffuse',
+      pipeline_name: 'man.fbm/Man_clothes_diffuse.png',
+    },
+  ],
+  version: '0.54:2',
+}

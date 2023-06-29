@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_grayLight"
+    tools:context=".view.bottomNavigationView.MainPowerFragment">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/AllStopPowerFABPowerFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomLinearLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/ic_baseline_close_24_black"
+        app:backgroundTint="@color/colorSecondary2"
+        app:fabCustomSize="80dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/startPowerFABPowerFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/AllStopPowerFABPowerFrag"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_baseline_send_24"
+        app:backgroundTint="@color/colorSecondary"
+        app:fabCustomSize="65dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/savePowerFABPowerFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/startPowerFABPowerFrag"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="invisible"
+        android:src="@drawable/ic_baseline_save_24"
+        app:backgroundTint="@color/colorSecondary"
+        app:fabCustomSize="65dp" />
+
+    <LinearLayout
+        android:id="@+id/bottomLinearLayout"
+        android:layout_width="2dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/powerScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/topLinearLayoutBottomSheetPower"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/powerFragmentHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/power"
+                android:textColor="@color/colorSecondary"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topLinearLayoutBottomSheetPower" />
+
+            <!-- Изменить все -->
+            <TextView
+                android:id="@+id/changeAllTV"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:text="@string/changeSelected"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/powerFragmentHeader" />
+
+            <TextView
+                android:id="@+id/maxPowerTVfragPower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_weight="1.5"
+                android:gravity="center_vertical"
+                android:text="gfdhgdfhfdhfd"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/changeAllTV" />
+
+            <!-- 111111111111 -->
+            <LinearLayout
+                android:id="@+id/buttonAllLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/maxPowerTVfragPower">
+
+                <Button
+                    android:id="@+id/chooseAllButtonFrag"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:drawableLeft="@drawable/ic_baseline_done_all_24"
+                    android:text="@string/chooseAll"
+                    android:textSize="16dp" />
+
+                <Button
+                    android:id="@+id/deleteAllButtonFrag"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:drawableLeft="@drawable/ic_baseline_clear_all_24"
+                    android:text="@string/deleteAll"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/plusAllFrag"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:gravity="center"
+                    android:text="  +  "
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/minusAllFrag"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:gravity="center"
+                    android:text="  -  "
+                    android:textSize="30dp" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/check1Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonAllLayout" />
+
+            <TextView
+                android:id="@+id/textMuscle1"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power1"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check1Frag"
+                app:layout_constraintTop_toBottomOf="@+id/buttonAllLayout" />
+
+            <TextView
+                android:id="@+id/minus1Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule1Frag"
+                app:layout_constraintTop_toBottomOf="@+id/buttonAllLayout" />
+
+            <EditText
+                android:id="@+id/editMuscule1Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:defaultValue="1"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus1Frag"
+                app:layout_constraintTop_toBottomOf="@+id/buttonAllLayout" />
+
+            <TextView
+                android:id="@+id/plus1Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonAllLayout" />
+
+
+            <!-- 2222222222 -->
+            <CheckBox
+                android:id="@+id/check2Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check1Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle2"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power2"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check2Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle1" />
+
+            <TextView
+                android:id="@+id/minus2Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule2Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus1Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule2Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus2Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule1Frag" />
+
+            <TextView
+                android:id="@+id/plus2Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus1Frag" />
+
+            <!-- 333333333 -->
+            <CheckBox
+                android:id="@+id/check3Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check2Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle3"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power3"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check3Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle2" />
+
+            <TextView
+                android:id="@+id/minus3Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule3Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus2Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule3Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus3Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule2Frag" />
+
+            <TextView
+                android:id="@+id/plus3Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus2Frag" />
+
+            <!-- 4444444444 -->
+            <CheckBox
+                android:id="@+id/check4Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check3Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle4"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power4"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check4Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle3" />
+
+            <TextView
+                android:id="@+id/minus4Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule4Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus3Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule4Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus4Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule3Frag" />
+
+            <TextView
+                android:id="@+id/plus4Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus3Frag" />
+
+            <!-- 555555555 -->
+            <CheckBox
+                android:id="@+id/check5Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check4Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle5"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power5"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check5Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle4" />
+
+            <TextView
+                android:id="@+id/minus5Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule5Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus4Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule5Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus5Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule4Frag" />
+
+            <TextView
+                android:id="@+id/plus5Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus4Frag" />
+
+            <!-- 666666666 -->
+            <CheckBox
+                android:id="@+id/check6Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check5Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle6"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power6"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check6Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle5" />
+
+            <TextView
+                android:id="@+id/minus6Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule6Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus5Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule6Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus6Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule5Frag" />
+
+            <TextView
+                android:id="@+id/plus6Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus5Frag" />
+
+            <!-- 777777777 -->
+            <CheckBox
+                android:id="@+id/check7Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check6Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle7"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power7"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check7Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle6" />
+
+            <TextView
+                android:id="@+id/minus7Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule7Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus6Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule7Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus7Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule6Frag" />
+
+            <TextView
+                android:id="@+id/plus7Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus6Frag" />
+
+            <!-- 8888888888 -->
+            <CheckBox
+                android:id="@+id/check8Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check7Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle8"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power8"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check8Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle7" />
+
+            <TextView
+                android:id="@+id/minus8Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule8Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus7Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule8Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus8Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule7Frag" />
+
+            <TextView
+                android:id="@+id/plus8Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus7Frag" />
+
+            <!-- 999999999999 -->
+            <CheckBox
+                android:id="@+id/check9Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check8Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle9"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power9"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check9Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle8" />
+
+            <TextView
+                android:id="@+id/minus9Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule9Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus8Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule9Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus9Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule8Frag" />
+
+            <TextView
+                android:id="@+id/plus9Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus8Frag" />
+
+            <!-- 10101010101010 -->
+            <CheckBox
+                android:id="@+id/check10Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check9Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle10"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power10"
+                android:textSize="17sp"
+                app:layout_constraintStart_toEndOf="@+id/check10Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle9" />
+
+            <TextView
+                android:id="@+id/minus10Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule10Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus9Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule10Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus10Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule9Frag" />
+
+            <TextView
+                android:id="@+id/plus10Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus9Frag" />
+
+            <!-- 11 11 11 11 11 11 -->
+            <CheckBox
+                android:id="@+id/check11Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check10Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle11"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power11"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check11Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle10" />
+
+            <TextView
+                android:id="@+id/minus11Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule11Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus10Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule11Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus11Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule10Frag" />
+
+            <TextView
+                android:id="@+id/plus11Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus10Frag" />
+
+            <!-- 12 12 12 12 12 12 -->
+            <CheckBox
+                android:id="@+id/check12Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check11Frag" />
+
+            <TextView
+                android:id="@+id/textMuscle12"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:text="@string/power12"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/check12Frag"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle11" />
+
+            <TextView
+                android:id="@+id/minus12Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  -  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/editMuscule12Frag"
+                app:layout_constraintTop_toBottomOf="@+id/minus11Frag" />
+
+            <EditText
+                android:id="@+id/editMuscule12Frag"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="number"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/plus12Frag"
+                app:layout_constraintTop_toBottomOf="@+id/editMuscule11Frag" />
+
+            <TextView
+                android:id="@+id/plus12Frag"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="  +  "
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plus11Frag" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/modulationAndfrequencyLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textMuscle12">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="@string/frequency"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupFreqFrag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13">
+
+                    <RadioButton
+                        android:id="@+id/radioFreq16Frag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="16Гц"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/radioFreq32Frag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="32Гц"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/radioFreq64Frag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="64Гц"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/radioFreq128Frag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="128Гц"
+                        android:textSize="18dp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:text="@string/modulation"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroupFreqFrag" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+                    <Switch
+                        android:id="@+id/switchFmModulFrag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:gravity="center"
+                        android:text="Fm"
+                        android:textSize="20sp"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <Switch
+                        android:id="@+id/switchAmModulFrag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:gravity="center"
+                        android:text="Am"
+                        android:textSize="20sp"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/powerFragmentHeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/white_grayLight">
+
+        <ImageView
+            android:id="@+id/dismissBottomSheetPower"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/ic_baseline_remove_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="@string/fast_control"
+            android:textSize="29dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_below="@id/powerFragmentHeaderLayout"
+        android:background="@drawable/shadow_top" />
+
+
+
+</RelativeLayout>

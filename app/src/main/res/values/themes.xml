@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.EMStrainer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#1C3761</item>
+        <item name="colorPrimaryDark">#1C3761</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="elevation">5dp</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#D3B41B</item>
+        <item name="colorSecondaryVariant">#FFE041</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.EMStrainer.nestedActivity" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#1C3761</item>
+        <item name="colorPrimaryDark">#1C3761</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="elevation">5dp</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#D3B41B</item>
+        <item name="colorSecondaryVariant">#FFE041</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color.-->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+</resources>

@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FullSuitPowerActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/AllStopPowerFABPowerFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomLinearLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="0dp"
+        android:onClick="allStopPowerPowerActivityFullSuit"
+        android:src="@drawable/ic_baseline_close_24_black"
+        app:backgroundTint="@color/colorSecondary2"
+        app:fabCustomSize="80dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/startPowerFABPowerFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/AllStopPowerFABPowerFrag"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="normalPower"
+        android:src="@drawable/ic_baseline_send_24"
+        app:backgroundTint="@color/colorSecondary"
+        app:fabCustomSize="55dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/savePowerFABPowerFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/startPowerFABPowerFrag"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="goToNewProfile"
+        android:src="@drawable/ic_baseline_save_24"
+        app:backgroundTint="@color/colorSecondary"
+        app:fabCustomSize="55dp" />
+
+    <LinearLayout
+        android:id="@+id/bottomLinearLayout"
+        android:layout_width="2dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" />
+
+    <ScrollView
+        android:id="@+id/powerScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/powerFragmentHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/power"
+                android:textColor="@color/colorSecondary"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/powerManLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/powerFragmentHeader">
+
+                <ImageView
+                    android:id="@+id/man_back_IV"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0.75"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/man_back_right"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/trapeze_blue_IV_6"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/trapeze_blue_right"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/trapeze_red_IV_6"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/trapeze_red_right"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/buttocks_blue_IV_9"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/buttocks_blue_right"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/buttocks_red_IV_9"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/buttocks_red_right"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/hip_biceps_blue_IV_10"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/hip_biceps_blue_right"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/hip_biceps_red_IV_10"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/hip_biceps_red_right"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/back_bottom_blue_IV_8"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/back_bottom_blue_right"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/back_bottom_red_IV_8"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/back_bottom_red_right"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/back_top_blue_IV_7"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/back_top_blue_right"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/back_top_red_IV_7"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/back_top_red_right"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/triceps_blue_IV_5"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/triceps_blue_right"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/triceps_red_IV_5"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/triceps_red_right"
+                    app:layout_constraintEnd_toStartOf="@+id/manCenterLayout"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/manCenterLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:foregroundGravity="center"
+                    app:layout_constraintEnd_toStartOf="@+id/man_front_IV"
+                    app:layout_constraintHorizontal_weight="7"
+                    app:layout_constraintStart_toEndOf="@+id/man_back_IV"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/man_front_IV"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0.75"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/man_front_right"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/deltas_blue_IV_12"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/deltas_blue"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/deltas_red_IV_12"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/deltas_red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/biceps_blue_IV_4"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/biceps_blue"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/biceps_red_IV_4"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/biceps_red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/breast_blue_IV_1"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/breast_blue"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/breast_red_IV_1"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/breast_red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/press_blue_IV_2"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/press_blue"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/press_red_IV_2"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/press_red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/oblique_blue_IV_3"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/oblique_blue"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/oblique_red_IV_3"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/oblique_red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/hips_blue_IV_11"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/hips_blue"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/hips_red_IV_11"
+                    android:layout_width="0dp"
+                    android:layout_height="607dp"
+                    android:alpha="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/hips_red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="9"
+                    app:layout_constraintStart_toEndOf="@+id/manCenterLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:foregroundGravity="center"
+                    android:paddingRight="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/manCenterLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- power1 -->
+                    <CheckBox
+                        android:id="@+id/check1ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check1Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/power1ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power1"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@+id/check1ActPow"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/power1ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- power2 -->
+                    <CheckBox
+                        android:id="@+id/check2ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check2Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check1ActPow" />
+
+                    <TextView
+                        android:id="@+id/power2ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power2"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@id/check2ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power1ActPow" />
+
+                    <EditText
+                        android:id="@+id/power2ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power1ValueActPow" />
+
+                    <!-- power3 -->
+                    <CheckBox
+                        android:id="@+id/check3ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check3Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check2ActPow" />
+
+                    <TextView
+                        android:id="@+id/power3ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power3"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@id/check3ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power2ActPow" />
+
+                    <EditText
+                        android:id="@+id/power3ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power2ValueActPow" />
+
+                    <!-- power4 -->
+                    <CheckBox
+                        android:id="@+id/check4ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check4Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check3ActPow" />
+
+                    <TextView
+                        android:id="@+id/power4ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power4"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@id/check4ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power3ActPow" />
+
+                    <EditText
+                        android:id="@+id/power4ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power3ValueActPow" />
+
+                    <!-- power5 -->
+                    <CheckBox
+                        android:id="@+id/check5ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check5Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check4ActPow" />
+
+                    <TextView
+                        android:id="@+id/power5ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power5"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@id/check5ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power4ActPow" />
+
+                    <EditText
+                        android:id="@+id/power5ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power4ValueActPow" />
+
+                    <!-- power6 -->
+                    <CheckBox
+                        android:id="@+id/check6ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check6Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check5ActPow" />
+
+                    <TextView
+                        android:id="@+id/power6ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power6"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@id/check6ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power5ActPow" />
+
+                    <EditText
+                        android:id="@+id/power6ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power5ValueActPow" />
+
+                    <!-- power7 -->
+                    <CheckBox
+                        android:id="@+id/check7ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check7Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check6ActPow" />
+
+                    <TextView
+                        android:id="@+id/power7ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power7"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@id/check7ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power6ActPow" />
+
+                    <EditText
+                        android:id="@+id/power7ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power6ValueActPow" />
+
+                    <!-- power8 -->
+                    <CheckBox
+                        android:id="@+id/check8ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check8Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check7ActPow" />
+
+                    <TextView
+                        android:id="@+id/power8ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power8"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@id/check8ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power7ActPow" />
+
+                    <EditText
+                        android:id="@+id/power8ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power7ValueActPow" />
+
+                    <!-- power9 -->
+                    <CheckBox
+                        android:id="@+id/check9ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check9Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check8ActPow" />
+
+                    <TextView
+                        android:id="@+id/power9ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power9"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@id/check9ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power8ActPow" />
+
+                    <EditText
+                        android:id="@+id/power9ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power8ValueActPow" />
+
+                    <!-- power10 -->
+                    <CheckBox
+                        android:id="@+id/check10ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check10Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check9ActPow" />
+
+                    <TextView
+                        android:id="@+id/power10ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power10"
+                        android:textSize="19sp"
+                        app:layout_constraintStart_toEndOf="@id/check10ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power9ActPow" />
+
+                    <EditText
+                        android:id="@+id/power10ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power9ValueActPow" />
+
+                    <!-- power11 -->
+                    <CheckBox
+                        android:id="@+id/check11ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check11Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check10ActPow" />
+
+                    <TextView
+                        android:id="@+id/power11ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power11"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@id/check11ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power10ActPow" />
+
+                    <EditText
+                        android:id="@+id/power11ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power10ValueActPow" />
+
+                    <!-- power12 -->
+                    <CheckBox
+                        android:id="@+id/check12ActPow"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="check12Power"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check11ActPow" />
+
+                    <TextView
+                        android:id="@+id/power12ActPow"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/power12"
+                        android:textSize="23sp"
+                        app:layout_constraintStart_toEndOf="@id/check12ActPow"
+                        app:layout_constraintTop_toBottomOf="@+id/power11ActPow" />
+
+                    <EditText
+                        android:id="@+id/power12ValueActPow"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textSize="23sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/power11ValueActPow" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/changeSelectedTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/changeSelected"
+                    android:textSize="23sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/man_front_IV" />
+
+                <TextView
+                    android:id="@+id/maxPowerTVactivityPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
+                    android:text="gfdhgd fhfdhfd ggg"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/changeSelectedTV" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/chooseAllButtonActPow"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="120dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp"
+                    android:drawableLeft="@drawable/ic_baseline_done_all_24"
+                    android:onClick="allCheckOn"
+                    android:text="@string/chooseAll"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/maxPowerTVactivityPower" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/deleteAllButtonActPow"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="120dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp"
+                    android:drawableLeft="@drawable/ic_baseline_clear_all_24"
+                    android:onClick="allCheckOff"
+                    android:text="@string/deleteAll"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/chooseAllButtonActPow"
+                    app:layout_constraintTop_toBottomOf="@id/maxPowerTVactivityPower" />
+
+                <TextView
+                    android:id="@+id/plusAll"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:onClick="plusCheck"
+                    android:text=" + "
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/maxPowerTVactivityPower" />
+
+                <TextView
+                    android:id="@+id/minusAll"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:onClick="minusCheck"
+                    android:text=" - "
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toStartOf="@+id/plusAll"
+                    app:layout_constraintTop_toBottomOf="@+id/maxPowerTVactivityPower" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/modulationAndfrequencyLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/powerManLayout">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center"
+                    android:text="@string/frequency"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupFreq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13">
+
+                    <RadioButton
+                        android:id="@+id/radioFreq16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="16Гц"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/radioFreq32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="32Гц"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/radioFreq64"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="64Гц"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/radioFreq128"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="128Гц"
+                        android:textSize="18dp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/modulation"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroupFreq" />
+
+                <LinearLayout
+                    android:id="@+id/switchsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+                    <Switch
+                        android:id="@+id/switchFmModul"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:gravity="center"
+                        android:onClick="onModulationFm"
+                        android:text="Fm"
+                        android:textSize="20sp"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <Switch
+                        android:id="@+id/switchAmModul"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:gravity="center"
+                        android:onClick="onModulationAm"
+                        android:text="Am"
+                        android:textSize="20sp"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bottomLinearLayout2"
+                    android:layout_width="2dp"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/switchsLayout" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/powerActivityHeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white_grayDark" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_below="@id/powerActivityHeaderLayout"
+        android:background="@drawable/shadow_top" />
+
+    <TextView
+        android:id="@+id/powerActivityHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"
+        android:onClick="closePowerActivity"
+        android:text="@string/saveProfile"
+        android:textSize="29dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/deleteProfileButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_baseline_delete_outline_24"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="11dp"
+        android:onClick="deleteButtonPressed"
+        android:visibility="invisible"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarPower"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:visibility="invisible" />
+
+</RelativeLayout>
